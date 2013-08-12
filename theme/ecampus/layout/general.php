@@ -74,6 +74,7 @@ echo $OUTPUT->doctype() ?>
 <html <?php echo $OUTPUT->htmlattributes() ?>>
 <head>
     <title><?php echo $PAGE->title ?></title>
+    <?php echo $OUTPUT->standard_head_html() ?>
     <meta name="description" content="<?php p(strip_tags(format_text($SITE->summary, FORMAT_HTML))) ?>" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
