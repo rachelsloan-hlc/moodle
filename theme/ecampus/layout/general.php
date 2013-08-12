@@ -67,14 +67,14 @@ $hidetagline = (!empty($PAGE->theme->settings->hide_tagline) && $PAGE->theme->se
 if (!empty($PAGE->theme->settings->tagline)) {
     $tagline = $PAGE->theme->settings->tagline;
 } else {
-    $tagline = get_string('defaulttagline', 'theme_splash');
+    $tagline = get_string('defaulttagline', 'theme_ecampus');
 }
 
 echo $OUTPUT->doctype() ?>
 <html <?php echo $OUTPUT->htmlattributes() ?>>
 <head>
     <title><?php echo $PAGE->title ?></title>
-    <?php echo $OUTPUT->standard_head_html() ?>
+    
     <meta name="description" content="<?php p(strip_tags(format_text($SITE->summary, FORMAT_HTML))) ?>" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -159,6 +159,8 @@ echo $OUTPUT->doctype() ?>
         <?php    } ?>
 
         <!-- END OF HEADER -->
+        <article id="main" role="main" >
+    
         <!-- START OF CONTENT -->
         <div id="page-content">
             <div id="region-main-box">
@@ -202,21 +204,87 @@ echo $OUTPUT->doctype() ?>
     </div>
     <!-- START OF FOOTER -->
     <?php if ($hasfooter) { ?>
-    <div id="page-footer">
-    <div id="footer-wrapper">
-        <?php
-    if ($hasfootnote) { ?>
-            <div id="footnote"><?php echo $PAGE->theme->settings->footnote; ?></div>
-            <?php
-    } ?>
-            <p class="helplink"><?php echo page_doc_link(get_string('moodledocslink')) ?></p>
-            <?php
-            echo $OUTPUT->login_info();
-            echo $OUTPUT->home_link();
-            echo $OUTPUT->standard_footer_html();
-            ?>
+    </article>
+
+        <!-- end content -->
+
+        <!-- start footer -->
+
+        <div class="push"></div>
         </div>
-    </div>
+
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="span3 footer-section">
+                        <h4>Navigate</h4>
+                        <ul>
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/course/">Continuing Education</a></li>
+                            <li><a href="#">Live Webinars</a></li>
+                            <li><a href="#">ePortfolios</a></li>
+                        </ul>
+                    </div>
+                    <div class="span2 footer-section">
+                        <h4>Information</h4>
+                        <ul>
+                            <li><a href="#">Terms of use</a></li>
+                            <li><a href="#">Contact us</a></li>
+                            <li><a href="#">Privacy policy</a></li>
+                        </ul>
+                    </div>
+                    <div class="span3 footer-section">
+                        <h4>Information</h4>
+                        <p>3223 N. Broad Street, Room 337<br />
+                            Philadelphia, PA  19140<br />
+                            (P) 215.707.7677
+
+                        </p>
+                    </div>
+                    <div class="span4">
+                        <h4>Connect with us</h4>
+                        <ul class="list-inline footer-social">
+                            <li>
+                                <a href="#" class="i-social i-social-twitter" title="Twitter account">&nbsp;</a><br />
+                                <a href="#" title="Twitter account">Twitter</a>
+                            </li>
+                            <li>
+                                <a href="#" class="i-social i-social-facebook" title="Facebook account">&nbsp;</a><br />
+                                <a href="#" title="Facebook account">Facebook</a>
+
+                            <li>
+                                <a href="#" class="i-social i-social-youtube" title="Youtube account">&nbsp;</a><br />
+                                <a href="#" title="Youtube account">YouTube</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="span12 text-center footer-copyright">
+                        <p><img src="/theme/ecampus/img/layout/footer/logo.png" alt="Temple Made Dental eCampus" height="40" align="" /> &nbsp;&nbsp;&nbsp; &copy; Copyright <?php echo date('Y'); ?> Temple University. All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="/theme/ecampus/js/libs/jquery-1.8.0.min.js"><\/script>')</script>
+
+        <script src="/theme/ecampus/libs/bootstrap/js/bootstrap.min.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="/theme/ecampus/js/libs/fancybox/jquery.fancybox-1.3.4.css"/>
+        <script src="/theme/ecampus/js/libs/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+
+        <script src="/theme/ecampus/js/plugins.js"></script>
+        <script src="/theme/ecampus/js/main.js"></script>
+
+        <script>
+            /*var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));*/
+        </script>
+        <script src="/theme/ecampus/js/libs/respond/respond.min.js"></script>
     <?php
 } ?>
 <?php echo $OUTPUT->standard_end_of_body_html() ?>
