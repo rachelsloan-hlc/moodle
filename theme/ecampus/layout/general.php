@@ -124,10 +124,21 @@ echo $OUTPUT->doctype() ?>
                     </div>
                 </div>
             </hgroup>
-    </header>
-
     <?php 
-    if ($hasnavbar) { ?>
+    if (!$hasnavbar) { ?>
+
+    <hgroup class="header-banner">
+                <div class="header-banner-image">
+                    <div class="header-welcome">
+                            <p>Welcome to Temple’s Dental eCampus which provides you with access to courses, webinars, certificate, and ePorftolios.<br />For details, select any of the areas shown</p>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </hgroup>
+    </header>
+    
+    <?php } else { ?>    
+    </header>    
     <section id="page-strap">
     <div class="container">
         <div class="row">
@@ -152,7 +163,10 @@ echo $OUTPUT->doctype() ?>
         </div>
     </div>
     </section>
-        <?php    } ?>
+       
+
+
+        <?php } ?>
 
         <!-- END OF HEADER -->
         <article id="main" role="main" >
