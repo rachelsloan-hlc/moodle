@@ -132,8 +132,7 @@ echo $OUTPUT->doctype() ?>
     </div>
     </div>
     </div>
-    <?php
-} // if ($hasheading || $hasnavbar) ?>
+
         <!-- END OF HEADER -->
         <!-- START OF CONTENT -->
         <div id="page-content">
