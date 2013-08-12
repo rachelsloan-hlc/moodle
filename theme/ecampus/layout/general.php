@@ -75,6 +75,9 @@ echo $OUTPUT->doctype() ?>
     <link rel="stylesheet" href="/libs/bootstrap/css/bootstrap-responsive.min.css">
     <link rel="stylesheet" href="/css/style.min.css">
     <script src="/js/libs/modernizr-2.6.1.min.js"></script>
+    <style type="text/css">
+    .accesshide {position:absolute;left:-10000px;font-weight:normal;font-size:1em;}
+</style>
 </head>
 <body id="<?php p($PAGE->bodyid) ?>" class="<?php p($PAGE->bodyclasses.' '.join(' ', $bodyclasses)) ?>">
     <div class="wrapper">
@@ -124,11 +127,41 @@ echo $OUTPUT->doctype() ?>
     <div class="wrapper clearfix">
     <div class="breadcrumb">
     <?php
-    if ($hasnavbar) {
-        echo $OUTPUT->navbar();
-    } ?>
+    if ($hasnavbar) { ?>
+    <section id="page-strap">
+    <div class="container">
+        <div class="row">
+            <div class="span7 ">
+                <section class="breadcrumbs">
+                    <?php echo $OUTPUT->navbar(); ?>
+                </section>
+            </div>
+            <div class="span4 offset1">
+                <div class="row">
+                    <form class="form-inline" role="input" title="Login" id="search">
+                        <div class="span2 ">
+                                <div class="sticky-input sticky-input-medium">
+                                    <div class="i-search sticky-icon sticky-icon-right "></div>
+                                    <input type="text" name="search" class="input-medium" placeholder="keyword search">
+                                </div>
+                        </div>
+                        <div class="span2">
+                            <div class="sticky-input sticky-input-medium">
+                                <div class="i-search sticky-icon sticky-icon-right "></div>
+                                <input type="text" name="dropdown" class="input-medium" placeholder="Post-doctoral">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="navbutton"> <?php echo $PAGE->button; ?></div>
+
+
+</section>
+        <?php    } ?>
+    </div>
+   
     </div>
     </div>
     </div>
