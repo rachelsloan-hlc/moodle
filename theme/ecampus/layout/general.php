@@ -99,7 +99,7 @@ echo $OUTPUT->doctype() ?>
                         <?php
                             if (isloggedin()) {
                             echo html_writer::start_tag('div', array('id'=>'userdetails'));
-                            echo html_writer::tag('h1', get_string('welcome', 'theme_splash', $USER->firstname));
+                            echo html_writer::tag('h5', get_string('welcome', 'theme_splash', $USER->firstname));
                             echo html_writer::link(new moodle_url('/user/profile.php', array('id'=>$USER->id)),
                             get_string('myprofile')).' | ';
                             echo html_writer::link(new moodle_url('/login/logout.php', array('sesskey'=>sesskey())),
@@ -108,11 +108,11 @@ echo $OUTPUT->doctype() ?>
                                 
                             } else { ?>
 
-                            <form class="form-inline" role="input" title="Login" id="login">
-                                    <input type="text" class="input-medium" placeholder="Email">
-                                    <input type="password" class="input-medium" placeholder="Password">
-                                    <button type="submit" class="btn btn-inverse button-blue">Sign in</button>
-                                </form>
+                            <form action="http://your.moodle.net/moodle/login/index.php" method="post" class="form-inline" role="input" title="Login" id="login">
+                              <input type="text" name="username" size="15" class="input-medium" placeholder="Email" />
+                              <input type="password" name="password" size="15" class="input-medium" placeholder="Password" />
+                              <input type="submit" name="Submit" class="btn btn-inverse button-blue" value="Sign in" />
+                            </form>
                             <?php } ?>
                                 
                         </div>
@@ -134,20 +134,17 @@ echo $OUTPUT->doctype() ?>
             </div>
             <div class="span4 offset1">
                 <div class="row">
-                    <form class="form-inline" role="input" title="Login" id="search">
-                        <div class="span2 ">
-                                <div class="sticky-input sticky-input-medium">
-                                    <div class="i-search sticky-icon sticky-icon-right "></div>
-                                    <input type="text" name="search" class="input-medium" placeholder="keyword search">
-                                </div>
+                    <form id="coursesearch" action="/course/search.php" method="get" class="form-inline" role="input">
+                        <fieldset class="coursesearchbox invisiblefieldset"><label for="shortsearchbox" class="accesshide">Search courses: </label>
+                        
+                        <div class="sticky-input sticky-input-medium">
+                            <input type="submit" class="i-search sticky-icon sticky-icon-right "></div>
+                            <input type="text" id="shortsearchbox" name="search" class="input-medium" placeholder="keyword search">
                         </div>
-                        <div class="span2">
-                            <div class="sticky-input sticky-input-medium">
-                                <div class="i-search sticky-icon sticky-icon-right "></div>
-                                <input type="text" name="dropdown" class="input-medium" placeholder="Post-doctoral">
-                            </div>
-                        </div>
+
+                        </fieldset>
                     </form>
+            
                 </div>
             </div>
         </div>
