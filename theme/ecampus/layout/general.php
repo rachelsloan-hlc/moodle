@@ -87,7 +87,7 @@ echo $OUTPUT->doctype() ?>
         </div>
         
         
-        <header>
+    <header>
             <hgroup class="header-top">
                 <div class="container">
                     <div class="row">
@@ -135,14 +135,11 @@ echo $OUTPUT->doctype() ?>
             <div class="span4 offset1">
                 <div class="row">
                     <form id="coursesearch" action="/course/search.php" method="get" class="form-inline" role="input">
-                        <fieldset class="coursesearchbox invisiblefieldset"><label for="shortsearchbox" class="accesshide">Search courses: </label>
-                        
+                        <label for="shortsearchbox" class="accesshide">Search courses: </label>
                         <div class="sticky-input sticky-input-medium">
                             <input type="submit" class="i-search sticky-icon sticky-icon-right "></div>
                             <input type="text" id="shortsearchbox" name="search" class="input-medium" placeholder="keyword search">
                         </div>
-
-                        </fieldset>
                     </form>
             
                 </div>
@@ -151,7 +148,7 @@ echo $OUTPUT->doctype() ?>
     </div>
 
 
-</section>
+    </section>
         <?php    } ?>
 
         <!-- END OF HEADER -->
