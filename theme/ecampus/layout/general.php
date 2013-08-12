@@ -77,6 +77,8 @@ echo $OUTPUT->doctype() ?>
     <script src="/js/libs/modernizr-2.6.1.min.js"></script>
     <style type="text/css">
     .accesshide {position:absolute;left:-10000px;font-weight:normal;font-size:1em;}
+    a.skip-block,
+    a.skip {position: absolute;top: -1000em;font-size: 0.85em;text-decoration:none;}
 </style>
 </head>
 <body id="<?php p($PAGE->bodyid) ?>" class="<?php p($PAGE->bodyclasses.' '.join(' ', $bodyclasses)) ?>">
@@ -99,6 +101,16 @@ echo $OUTPUT->doctype() ?>
                         <div class="span6 header-login">
                         <?php
                             if (isloggedin()) {
+                            echo html_writer::start_tag('div', array('id'=>'userdetails'));
+                            echo html_writer::tag('h1', get_string('usergreeting', 'theme_splash', $USER->firstname));
+                            echo html_writer::start_tag('p', array('class'=>'prolog'));
+                            echo html_writer::link(new moodle_url('/user/profile.php', array('id'=>$USER->id)),
+                            get_string('myprofile')).' | ';
+                            echo html_writer::link(new moodle_url('/login/logout.php', array('sesskey'=>sesskey())),
+                            get_string('logout'));
+                            echo html_writer::end_tag('p');
+                            echo html_writer::end_tag('div');
+                            echo html_writer::tag('div', $OUTPUT->user_picture($USER, array('size'=>55)), array('class'=>'userimg'));
                                 
                             } else { ?>
 
