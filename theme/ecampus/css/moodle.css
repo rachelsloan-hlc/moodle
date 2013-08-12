@@ -8,3 +8,5 @@
  fieldset.hidden { display: block;}
 
  .arrow.sep { display: none;}
+
+ .course { padding-bottom: 0 !important;}
