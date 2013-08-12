@@ -17,12 +17,12 @@
 /**
  * Config for the splash theme
  *
- * @package   theme_splash
- * @copyright 2010 Caroline Kennedy - Synergy Learning
+ * @package   theme_ecampus
+ * @copyright 2013 - Healthcare Learning
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-$THEME->name = 'splash';
+$THEME->name = 'ecampus';
 
 $THEME->parents = array(
     'canvas',

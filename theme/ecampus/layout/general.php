@@ -68,95 +68,54 @@ echo $OUTPUT->doctype() ?>
 <html <?php echo $OUTPUT->htmlattributes() ?>>
 <head>
     <title><?php echo $PAGE->title ?></title>
-    <link rel="shortcut icon" href="<?php echo $OUTPUT->pix_url('favicon', 'theme')?>" />
     <meta name="description" content="<?php p(strip_tags(format_text($SITE->summary, FORMAT_HTML))) ?>" />
-    <?php echo $OUTPUT->standard_head_html() ?>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/libs/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/libs/bootstrap/css/bootstrap-responsive.min.css">
+    <link rel="stylesheet" href="/css/style.min.css">
+    <script src="/js/libs/modernizr-2.6.1.min.js"></script>
 </head>
 <body id="<?php p($PAGE->bodyid) ?>" class="<?php p($PAGE->bodyclasses.' '.join(' ', $bodyclasses)) ?>">
-<?php echo $OUTPUT->standard_top_of_body_html() ?>
-<div id="page">
-<?php if ($hasheading || $hasnavbar) { ?>
-    <div id="page-header">
-    <div id="page-header-wrapper" class="wrapper clearfix">
-        <?php
-    if ($hasheading) { ?>
-        <div id="headermenu">
-        <?php
-        if (isloggedin()) {
-            echo html_writer::start_tag('div', array('id'=>'userdetails'));
-            echo html_writer::tag('h1', get_string('usergreeting', 'theme_splash', $USER->firstname));
-            echo html_writer::start_tag('p', array('class'=>'prolog'));
-            echo html_writer::link(new moodle_url('/user/profile.php', array('id'=>$USER->id)),
-            get_string('myprofile')).' | ';
-            echo html_writer::link(new moodle_url('/login/logout.php', array('sesskey'=>sesskey())),
-            get_string('logout'));
-            echo html_writer::end_tag('p');
-            echo html_writer::end_tag('div');
-            echo html_writer::tag('div', $OUTPUT->user_picture($USER, array('size'=>55)), array('class'=>'userimg'));
-        } else {
-            echo html_writer::start_tag('div', array('id'=>'userdetails_loggedout'));
-            $loginlink = html_writer::link(new moodle_url('/login/'), get_string('loginhere', 'theme_splash'));
-            echo html_writer::tag('h1', get_string('welcome', 'theme_splash', $loginlink));
-            echo html_writer::end_tag('div');
-        } ?>
-        <div class="clearer"></div>
-        <div id="colourswitcher">
-        <ul>
-        <li><img src="<?php echo $OUTPUT->pix_url('colour', 'theme'); ?>" alt="colour" /></li>
-        <li><a href="<?php echo new moodle_url($PAGE->url, array('splashcolour'=>'red')); ?>" class="styleswitch
-        colour-red"><img src="<?php echo $OUTPUT->pix_url('red-theme2', 'theme'); ?>" alt="red" /></a></li>
-        <li><a href="<?php echo new moodle_url($PAGE->url, array('splashcolour'=>'green')); ?>"
-        class="styleswitch colour-green"><img src="<?php echo $OUTPUT->pix_url('green-theme2', 'theme'); ?>"
-        alt="green" /></a></li>
-        <li><a href="<?php echo new moodle_url($PAGE->url, array('splashcolour'=>'blue')); ?>"
-        class="styleswitch colour-blue"><img src="<?php echo $OUTPUT->pix_url('blue-theme2', 'theme'); ?>"
-        alt="blue" /></a></li>
-        <li><a href="<?php echo new moodle_url($PAGE->url, array('splashcolour'=>'orange')); ?>"
-        class="styleswitch colour-orange"><img src="<?php echo $OUTPUT->pix_url('orange-theme2', 'theme');
-        ?>"
-        alt="orange" /></a></li>
-        </ul>
+    <div class="wrapper">
+        <!-- end header -->
+        <div class="hidden">
+            <a href="#main" title="skip to main content">Skip to main content</a>
+            <a href="#login" title="skip to login">Skip to login</a>
         </div>
-        <?php
-        if (!empty($PAGE->layout_options['langmenu'])) {
-            echo $OUTPUT->lang_menu();
-        }
-            echo $PAGE->headingmenu
-        ?>
-        </div>
-        <div id="logobox">
-        <?php
-        if ($haslogo) {
-            echo html_writer::link(new moodle_url('/'), "<img src='".$PAGE->theme->settings->logo."' alt='logo' />");
-        } else {
-            echo html_writer::link(new moodle_url('/'), $PAGE->heading, array('class'=>'nologoimage'));
-        } ?>
-        <?php
-        if (!$hidetagline) { ?>
-            <h4><?php echo $tagline ?></h4>
-            <?php
-        } ?>
-        </div>
-        <div class="clearer"></div>
-        <?php
-        if ($haslogo) { ?>
-            <h4 class="headermain inside">&nbsp;</h4>
-            <?php
-        } else { ?>
-                <h4 class="headermain inside"><?php echo $PAGE->heading ?></h4>
-                <?php
-        } ?>
-        <?php
-    } // End of if ($hasheading)?>
-    <!-- CUSTOMMENU -->
-    <div class="clearer"></div>
-    <?php
-    if ($hascustommenu) { ?>
-        <div id="moodlemenu">
-        <div id="custommenu"><?php echo $custommenu; ?></div>
-        </div>
-        <?php
-    } ?>
+        
+        
+        <header>
+            <hgroup class="header-top">
+                <div class="container">
+                    <div class="row">
+                        <div class="span6 header-logo">
+                             <img src="/img/layout/header/logo.png" alt="Temple Made: Dental eCampus Logo" title="Temple Made: Dental eCampus Logo" />
+                             <h1 class="hide-text">Temple Made: Dental eCampus</h1>
+                        </div>
+                        <div class="span6 header-login">
+                        <?php
+                            if (isloggedin()) {
+                                
+                            } else { ?>
+
+                            <form class="form-inline" role="input" title="Login" id="login">
+                                    <input type="text" class="input-medium" placeholder="Email">
+                                    <input type="password" class="input-medium" placeholder="Password">
+                                    <button type="submit" class="btn btn-inverse button-blue">Sign in</button>
+                                </form>
+
+
+                               
+                            <?php } ?>
+                                
+                        </div>
+                    </div>
+                </div>
+            </hgroup>
+        
+        
+    </header>
     <!-- END CUSTOMMENU -->
     <?php if (!empty($courseheader)) { ?>
     <div id="course-header"><?php echo $courseheader; ?></div>
@@ -170,7 +129,6 @@ echo $OUTPUT->doctype() ?>
     } ?>
     </div>
     <div class="navbutton"> <?php echo $PAGE->button; ?></div>
-    </div>
     </div>
     </div>
     </div>
