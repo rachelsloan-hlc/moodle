@@ -217,7 +217,7 @@ echo $OUTPUT->doctype() ?>
     </div>
 </div>
 
-       <?php else { ?>     
+       <?php } else { ?>     
     
         <!-- START OF CONTENT -->
         <div id="page-content">
