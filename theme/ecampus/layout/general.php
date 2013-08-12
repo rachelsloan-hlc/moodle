@@ -23,7 +23,7 @@
  */
 
 $hasheading = ($PAGE->heading);
-if($home)
+if($PAGE->bodyid == "page-site-index")
 {
     $hasnavbar = false;
 }
@@ -148,6 +148,7 @@ echo $OUTPUT->doctype() ?>
             
                 </div>
             </div>
+
         </div>
     </div>
     </section>
