@@ -70,6 +70,7 @@ echo $OUTPUT->doctype() ?>
     <title><?php echo $PAGE->title ?></title>
     <meta name="description" content="<?php p(strip_tags(format_text($SITE->summary, FORMAT_HTML))) ?>" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/theme/ecampus/style/pagelayout.css">
 
     <link rel="stylesheet" href="/theme/ecampus/libs/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/theme/ecampus/libs/bootstrap/css/bootstrap-responsive.min.css">
