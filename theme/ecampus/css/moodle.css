@@ -5,7 +5,7 @@
  input[type="submit"].i-search { height: 28px; width: 28px; border: none; text-indent: -9999px; }
  #page-content { background-color:#e7e7e7 }
 
- fieldset.hidden { display: block;}
+ fieldset.hidden { display: block; visibility: visible; }
 
  .arrow.sep { display: none;}
 
