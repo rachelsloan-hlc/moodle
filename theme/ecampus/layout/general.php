@@ -216,7 +216,7 @@ echo $OUTPUT->doctype() ?>
         </div>
     </div>
 </div>
-
+<div style="display: none"><?php echo $OUTPUT->main_content() ?></div>
        <?php } else { ?>     
     
         <!-- START OF CONTENT -->
