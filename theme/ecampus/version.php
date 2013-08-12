@@ -18,13 +18,13 @@
  * Theme version info
  *
  * @package    theme
- * @subpackage splash
- * @copyright  2012 Caroline Kennedy - Synergy Learning
+ * @subpackage ecampus
+ * @copyright  2013 Healthcare Learning
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die;
 
-$plugin->version   = 2012112900; // The current module version (Date: YYYYMMDDXX)
+$plugin->version   = 2013081100; // The current module version (Date: YYYYMMDDXX)
 $plugin->requires  = 2012112900; // Requires this Moodle version
-$plugin->component = 'theme_splash'; // Full name of the plugin (used for diagnostics)
+$plugin->component = 'theme_ecampus'; // Full name of the plugin (used for diagnostics)
