@@ -74,6 +74,7 @@ echo $OUTPUT->doctype() ?>
     <link rel="stylesheet" href="/theme/ecampus/libs/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/theme/ecampus/libs/bootstrap/css/bootstrap-responsive.min.css">
     <link rel="stylesheet" href="/theme/ecampus/css/style.min.css">
+    <link rel="stylesheet" href="/theme/ecampus/css/moodle.css">
     <script src="/theme/ecampus/js/libs/modernizr-2.6.1.min.js"></script>
     
 </head>
