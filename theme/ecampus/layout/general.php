@@ -119,14 +119,8 @@ echo $OUTPUT->doctype() ?>
         
         
     </header>
-    <!-- END CUSTOMMENU -->
-    <?php if (!empty($courseheader)) { ?>
-    <div id="course-header"><?php echo $courseheader; ?></div>
-    <?php } ?>
-    <div class="navbar">
-    <div class="wrapper clearfix">
-    <div class="breadcrumb">
-    <?php
+
+    <?php 
     if ($hasnavbar) { ?>
     <section id="page-strap">
     <div class="container">
@@ -161,10 +155,7 @@ echo $OUTPUT->doctype() ?>
 </section>
         <?php    } ?>
     </div>
-   
-    </div>
-    </div>
-    </div>
+
 
         <!-- END OF HEADER -->
         <!-- START OF CONTENT -->
