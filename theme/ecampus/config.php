@@ -33,10 +33,6 @@ $THEME->sheets = array(
     'pagelayout',
     'core',
     'menus',
-    'orange',
-    'blue',
-    'green',
-    'red',
     'settings',
 );
 
@@ -153,4 +149,4 @@ $THEME->layouts = array(
 
 $THEME->csspostprocess = 'splash_process_css';
 
-$THEME->javascripts = array('colourswitcher');
+

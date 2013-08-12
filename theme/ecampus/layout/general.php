@@ -26,6 +26,7 @@ $hasheading = ($PAGE->heading);
 if($PAGE->bodyid == "page-site-index")
 {
     $hasnavbar = false;
+    $ishome = true;
 }
 else
 {
@@ -127,7 +128,7 @@ echo $OUTPUT->doctype() ?>
                 </div>
             </hgroup>
     <?php 
-    if (!$hasnavbar) { ?>
+    if ($ishome) { ?>
 
     <hgroup class="header-banner">
                 <div class="header-banner-image">
@@ -172,6 +173,51 @@ echo $OUTPUT->doctype() ?>
 
         <!-- END OF HEADER -->
         <article id="main" role="main" >
+
+       <?php if($ishome) { ?>
+       
+       <div class="container">
+     <div class="row">
+        <div class="span4">
+            <section class="homepage-block sticky">
+                <div class="image"><img src="img/module/homepage-block/home-block-1.png" width="351" height="161" alt="Post-doctoral Certificates" /></div>
+                <div class="title"><h3>Continuing Education</h3></div>
+                <div class="text bg-green">
+                    <p>To make learning more accessible, Temple offers a growing list of online certificates supported by online lectures, directed reading, case-presentations, and online assessments.</p>
+                </div>
+                <div class="more-info">
+                    <a href="/catalogue/" class="i-align-left i-arrow-right" title="More information about Post-doctoral Certificates">More info</a>
+                </div>
+            </section>
+        </div>
+        <div class="span4">
+            <section class="homepage-block sticky">
+                <div class="image"><img src="img/module/homepage-block/home-block-2.png" width="351" height="161" alt="Continuing Education" /></div>
+                <div class="title"><h3>Live Webinars</h3></div>
+                <div class="text bg-blue">
+                    <p>Our live webinars give you access to leading speakers from around the world so that you can directly ask them questions about technologies or treatments.  If you miss one, don’t worry, we record them as well so you can watch later as well.  If you would like to speak at one of our webinars, please <a href="mailto:kimberlee@dental.temple.edu">email us</a>.  </p>
+                </div>
+                <div class="more-info">
+                    <a href="#" class="i-align-left i-arrow-right" title="Continuing Education">More info</a>
+                </div>
+            </section>
+        </div>
+        <div class="span4">
+            <section class="homepage-block sticky">
+                <div class="image"><img src="img/module/homepage-block/home-block-3.png" width="351" height="161" alt="ePortfolios" /></div>
+                <div class="title"><h3>ePortfolios</h3></div>
+                <div class="text bg-orange">
+                    <p>To better support dental students and faculty, Temple provides a growing number of eportfolios. These can also be licensed by other schools to improve monitoring of student achievements, guide reflective thinking, and to record assessments.  The Temple Dental eCampus provides other schools with an opportunity to create their own ePortfolios at a relatively low cost.</p>
+                </div>
+                <div class="more-info">
+                    <a href="#" class="i-align-left i-arrow-right" title="ePortfolios">More info</a>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+
+       <?php else { ?>     
     
         <!-- START OF CONTENT -->
         <div id="page-content">
@@ -207,6 +253,8 @@ echo $OUTPUT->doctype() ?>
                 </div>
             </div>
         </div>
+
+        <?php } ?>
         <!-- END OF CONTENT -->
         <?php if (!empty($coursefooter)) { ?>
         <div id="course-footer"><?php echo $coursefooter; ?></div>
