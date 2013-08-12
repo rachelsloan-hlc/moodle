@@ -94,7 +94,7 @@ echo $OUTPUT->doctype() ?>
         </div>
         
         
-    <header>
+        <header>
             <hgroup class="header-top">
                 <div class="container">
                     <div class="row">
@@ -105,28 +105,25 @@ echo $OUTPUT->doctype() ?>
                         <div class="span6 header-login">
                         <?php
                             if (isloggedin()) {
-                            echo html_writer::start_tag('div', array('id'=>'userdetails'));
+                            
                             echo html_writer::tag('h5', get_string('welcome', 'theme_splash', $USER->firstname));
                             echo html_writer::link(new moodle_url('/user/profile.php', array('id'=>$USER->id)),
                             get_string('myprofile')).' | ';
                             echo html_writer::link(new moodle_url('/login/logout.php', array('sesskey'=>sesskey())),
                             get_string('logout'));
-                            echo html_writer::end_tag('div');
                                 
                             } else { ?>
 
-                            <form action="http://your.moodle.net/moodle/login/index.php" method="post" class="form-inline" role="input" title="Login" id="login">
+                            <form action="/login/index.php" method="post" class="form-inline" role="input" title="Login" id="login">
                               <input type="text" name="username" size="15" class="input-medium" placeholder="Email" />
                               <input type="password" name="password" size="15" class="input-medium" placeholder="Password" />
                               <input type="submit" name="Submit" class="btn btn-inverse button-blue" value="Sign in" />
                             </form>
-                            <?php } ?>
-                                
+                            <?php } ?>      
                         </div>
                     </div>
                 </div>
             </hgroup>
-        
     </header>
 
     <?php 
@@ -153,8 +150,6 @@ echo $OUTPUT->doctype() ?>
             </div>
         </div>
     </div>
-
-
     </section>
         <?php    } ?>
 

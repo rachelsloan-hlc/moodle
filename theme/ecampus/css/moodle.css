@@ -2,4 +2,4 @@
     a.skip-block,
     a.skip {position: absolute;top: -1000em;font-size: 0.85em;text-decoration:none;}
 
-   .i-search { height: 28px; width: 28px; border: none; text-indent: -9999px; }
+   input[type="submit"].i-search { height: 28px; width: 28px; border: none; text-indent: -9999px; }
