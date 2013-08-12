@@ -84,8 +84,10 @@ echo $OUTPUT->doctype() ?>
     <link rel="stylesheet" href="/theme/ecampus/css/moodle.css">
     <script src="/theme/ecampus/js/libs/modernizr-2.6.1.min.js"></script>
     
+<?php echo $OUTPUT->standard_head_html() ?>
 </head>
 <body id="<?php p($PAGE->bodyid) ?>" class="<?php p($PAGE->bodyclasses.' '.join(' ', $bodyclasses)) ?>">
+<?php echo $OUTPUT->standard_top_of_body_html() ?>
     <div class="wrapper">
         <!-- end header -->
         <div class="hidden">
