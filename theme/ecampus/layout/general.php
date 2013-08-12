@@ -151,7 +151,7 @@ echo $OUTPUT->doctype() ?>
             </div>
             <div class="span4 offset1">
                 <div class="row">
-                    <form id="coursesearch" action="/course/search.php" method="get" class="form-inline" role="input">
+                    <form id="course_search" action="/course/search.php" method="get" class="form-inline" role="input">
                         <label for="shortsearchbox" class="accesshide">Search courses: </label>
                         <div class="sticky-input sticky-input-medium">
                             <input type="submit" class="i-search sticky-icon sticky-icon-right "></div>
