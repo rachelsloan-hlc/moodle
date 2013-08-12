@@ -23,7 +23,15 @@
  */
 
 $hasheading = ($PAGE->heading);
-$hasnavbar = (empty($PAGE->layout_options['nonavbar']) && $PAGE->has_navbar());
+if($home)
+{
+    $hasnavbar = false;
+}
+else
+{
+    $hasnavbar = (empty($PAGE->layout_options['nonavbar']) && $PAGE->has_navbar());
+}
+
 $hasfooter = (empty($PAGE->layout_options['nofooter']));
 $hassidepre = $PAGE->blocks->region_has_content('side-pre', $OUTPUT);
 $hassidepost = $PAGE->blocks->region_has_content('side-post', $OUTPUT);
@@ -31,8 +39,6 @@ $hassidepost = $PAGE->blocks->region_has_content('side-post', $OUTPUT);
 $custommenu = $OUTPUT->custom_menu();
 $hascustommenu = (empty($PAGE->layout_options['nocustommenu']) && !empty($custommenu));
 
-splash_check_colourswitch();
-splash_initialise_colourswitcher($PAGE);
 
 $courseheader = $coursecontentheader = $coursecontentfooter = $coursefooter = '';
 if (empty($PAGE->layout_options['nocourseheaderfooter'])) {
@@ -70,7 +76,6 @@ echo $OUTPUT->doctype() ?>
     <title><?php echo $PAGE->title ?></title>
     <meta name="description" content="<?php p(strip_tags(format_text($SITE->summary, FORMAT_HTML))) ?>" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/theme/ecampus/style/pagelayout.css">
 
     <link rel="stylesheet" href="/theme/ecampus/libs/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/theme/ecampus/libs/bootstrap/css/bootstrap-responsive.min.css">
