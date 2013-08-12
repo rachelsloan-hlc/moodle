@@ -1,0 +1,3 @@
+ .accesshide {position:absolute;left:-10000px;font-weight:normal;font-size:1em;}
+    a.skip-block,
+    a.skip {position: absolute;top: -1000em;font-size: 0.85em;text-decoration:none;}

@@ -1,0 +1,36 @@
+/*	
+	layout.css
+	This file sets up the s-word of the application.
+		
+	@author: Hannah
+	@created: 02/05/12
+	
+	@notes: Classes/Ids use CamelCase.
+	 
+*/
+
+* {
+    margin: 0;
+}
+html, body {
+    height: 100%;
+}
+.wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -190px; /* the bottom margin is the negative value of the footer's height */
+    @media (max-width: 767px) { margin: auto; }
+}
+footer, .push {
+    min-height: 190px; /* .push must be the same height as .footer */
+    @media (max-width: 767px) { height: inherit; }
+}
+
+
+/*
+
+Sticky Footer by Ryan Fait
+http://ryanfait.com/
+
+*/

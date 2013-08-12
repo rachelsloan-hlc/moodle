@@ -1,0 +1,89 @@
+
+
+
+.rounded-block {
+    border: 1px solid #d3d3d3;
+    .border-radius(5px);
+    padding: 10px;
+    margin: 10px 5px;
+}
+
+#catalogueDetail .rounded-block 
+{
+    padding: 3px 5px;
+    line-height: 35px;
+    margin: -1px 0px;
+
+    .cd-divide, .cd-divide-50 {
+        border-right: 1px solid #ccc;
+        display: table-cell;
+        height: 100%;
+    }
+
+    .cd-divide-50 {
+      width: 48%;
+      text-align: center;
+    }
+
+//    .span3 { margin-left: 0; }
+
+    table a {
+      color: @red;
+    }
+}
+
+#catalogueDetail .in 
+{
+    padding: 15px;
+}
+
+.best-value {
+    background-color: #f9eaed;
+}
+
+
+.image-polaroid {
+    position: relative;
+    overflow: hidden;
+    .links-darken(#fff);
+    color: #fff;
+    .image, .text { position: absolute; left: 0; width: 100%;}
+    .image {
+        top: 0;
+        min-height: 130px;
+
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+
+        -webkit-border-top-left-radius: 5px;
+        -webkit-border-top-right-radius: 5px;
+        -moz-border-radius-topleft: 5px;
+        -moz-border-radius-topright: 5px;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+    }
+    .text {
+        bottom: 0;
+        min-height: 30px;
+        .bg-black;
+        .links-darken(#fff);
+        p {
+            line-height: inherit;
+            margin: 0;
+            padding: 0 5px;
+        }
+    }
+    &.image-thumbnail  {
+        width: 200px;
+        height: 160px;
+            .text { font-size: 0.9em; line-height: 29px;
+              .links-darken(#fff); }
+    }
+    .carousel-indicators li {
+        width: 5px;
+        height: 5px;
+    }
+}

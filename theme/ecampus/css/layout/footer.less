@@ -1,0 +1,50 @@
+/*	
+	style.css
+	This file imports all relevant css.
+		
+	@author: Hannah
+	@created: 02/05/12
+	
+	@notes: Classes/Ids use CamelCase.
+	 
+*/
+
+
+footer {
+    @media (max-width: 767px) { padding: 0 20px; }
+    margin-top: 20px;
+    background-color: @grey;
+    color: #fff;
+    .links-darken(#fff);
+    padding: 20px 0;
+
+    li {
+        background: none;
+        padding: 0px;
+    }
+}
+
+.footer-section {
+    background: url('../img/layout/footer/section.png') no-repeat top right;
+    @media (max-width: 767px) { background: none; border-bottom: 1px solid #fff; padding: 20px 0; }
+}
+
+.footer-social {
+    .i-social {
+        display: inline-block;
+        .ie7 & {
+            zoom: 1;
+            *display: inline;
+        }
+    }
+    li {
+        text-align: center;
+        width: 100px;
+    }
+}
+
+.footer-copyright {
+    padding-top: 20px;
+    p { font-size: 0.8em; img { height: 30px; } }
+
+}
