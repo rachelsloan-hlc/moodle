@@ -174,7 +174,7 @@ echo $OUTPUT->doctype() ?>
         <!-- END OF HEADER -->
         <article id="main" role="main" >
 
-       <?php if($ishome) { ?>
+       <?php if($ishome && (is_siteadmin() == false)) { ?>
        
        <div class="container">
      <div class="row">
@@ -198,7 +198,7 @@ echo $OUTPUT->doctype() ?>
                     <p>Our live webinars give you access to leading speakers from around the world so that you can directly ask them questions about technologies or treatments.  If you miss one, don’t worry, we record them as well so you can watch later as well.  If you would like to speak at one of our webinars, please <a href="mailto:kimberlee@dental.temple.edu">email us</a>.  </p>
                 </div>
                 <div class="more-info">
-                    <a href="/course/" class="i-align-left i-arrow-right" title="Continuing Education">More info</a>
+                    <a href="/course/category.php?id=999" class="i-align-left i-arrow-right" title="Live Webinars">More info</a>
                 </div>
             </section>
         </div>
@@ -281,7 +281,7 @@ echo $OUTPUT->doctype() ?>
                         <ul>
                             <li><a href="/">Home</a></li>
                             <li><a href="/course/">Continuing Education</a></li>
-                            <li><a href="#">Live Webinars</a></li>
+                            <li><a href="/course/category.php?id=999">Live Webinars</a></li>
                             <li><a href="#">ePortfolios</a></li>
                         </ul>
                     </div>
@@ -327,24 +327,7 @@ echo $OUTPUT->doctype() ?>
             </div>
         </footer>
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="/theme/ecampus/js/libs/jquery-1.8.0.min.js"><\/script>')</script>
-
-        <script src="/theme/ecampus/libs/bootstrap/js/bootstrap.min.js"></script>
-
-        <link rel="stylesheet" type="text/css" href="/theme/ecampus/js/libs/fancybox/jquery.fancybox-1.3.4.css"/>
-        <script src="/theme/ecampus/js/libs/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
-
-        <script src="/theme/ecampus/js/plugins.js"></script>
-        <script src="/theme/ecampus/js/main.js"></script>
-
-        <script>
-            /*var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-            s.parentNode.insertBefore(g,s)}(document,'script'));*/
-        </script>
-        <script src="/theme/ecampus/js/libs/respond/respond.min.js"></script>
+        
     <?php
 } ?>
 <?php echo $OUTPUT->standard_end_of_body_html() ?>
