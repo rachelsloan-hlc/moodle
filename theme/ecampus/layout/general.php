@@ -327,23 +327,8 @@ echo $OUTPUT->doctype() ?>
             </div>
         </footer>
 
-        
-
-        <script src="/theme/ecampus/libs/bootstrap/js/bootstrap.min.js"></script>
-
-        <link rel="stylesheet" type="text/css" href="/theme/ecampus/js/libs/fancybox/jquery.fancybox-1.3.4.css"/>
-        <script src="/theme/ecampus/js/libs/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
-
-        <script src="/theme/ecampus/js/plugins.js"></script>
-        <script src="/theme/ecampus/js/main.js"></script>
-
-        <script>
-            /*var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-            s.parentNode.insertBefore(g,s)}(document,'script'));*/
-        </script>
-        <script src="/theme/ecampus/js/libs/respond/respond.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="/theme/ecampus/javascript/fancybox/jquery.fancybox-1.3.4.css"/>
+        <script src="/theme/ecampus/javascript/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
     <?php
 } ?>
 <?php echo $OUTPUT->standard_end_of_body_html() ?>
