@@ -174,7 +174,7 @@ echo $OUTPUT->doctype() ?>
        
         <!-- END OF HEADER -->
         <article id="main" role="main" >
-       
+   <?php } if($ishome) { ?>    
        <div class="container">
      <div class="row">
         <div class="span4">
