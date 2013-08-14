@@ -1497,8 +1497,10 @@ class core_course_renderer extends plugin_renderer_base {
         $attributes = $chelper->get_and_erase_attributes('course_category_tree clearfix');
         $content .= html_writer::start_tag('div',
                 array('id' => $id, 'data-showcourses' => $chelper->get_show_courses()) + $attributes);
-
+        $content .= '<h4>Select a category</h4>';
         $content .= html_writer::tag('div', $categorycontent, array('class' => 'content'));
+
+
 
         if ($coursecat->get_children_count() && $chelper->get_subcat_depth() != 1) {
             // We don't need to display "Expand all"/"Collapse all" buttons if there are no
