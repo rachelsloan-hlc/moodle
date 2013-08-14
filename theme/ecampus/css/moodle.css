@@ -1,0 +1,12 @@
+ .accesshide {position:absolute;left:-10000px;font-weight:normal;font-size:1em;}
+ a.skip-block,
+ a.skip {position: absolute;top: -1000em;font-size: 0.85em;text-decoration:none;}
+
+ input[type="submit"].i-search { height: 28px; width: 28px; border: none; text-indent: -9999px; }
+ #page-content { background-color:#e7e7e7 }
+
+ fieldset.hidden { display: block; visibility: visible; }
+
+ .arrow.sep { display: none;}
+
+ .course { padding-bottom: 0 !important;}
