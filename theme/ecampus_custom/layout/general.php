@@ -114,9 +114,7 @@ echo $OUTPUT->doctype() ?>
                             echo html_writer::link(new moodle_url('/login/logout.php', array('sesskey'=>sesskey())),
                             get_string('logout'));
                             if(is_siteadmin()) {
-                            echo ' | ';
-                            echo html_writer::link(new moodle_url('/admin/'), 
-                            get_string('adminsection'));
+                            echo " | <a href='/admin/'>".get_string('adminsection')."</a>";
                                 }
                                 
                             } else { ?>
