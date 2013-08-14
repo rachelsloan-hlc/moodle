@@ -147,7 +147,6 @@ $THEME->layouts = array(
     ),
 );
 
-$THEME->csspostprocess = 'splash_process_css';
 
 $THEME->javascripts_footer = array('main','modernizr02.6.1.min','plugins','respond.min','respond.src');
 
