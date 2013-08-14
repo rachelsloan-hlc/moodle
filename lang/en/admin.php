@@ -1133,3 +1133,4 @@ $string['cachesession'] = 'Session cache';
 $string['cachesessionhelp'] = 'User specific cache that expires when the user\'s session ends. Designed to alleviate session bloat/strain.';
 $string['cacheapplication'] = 'Application cache';
 $string['cacheapplicationhelp'] = ' Cached items are shared amoung all users and expire by a determined ttl.';
+$string['adminsection'] = 'Administrate Site';
