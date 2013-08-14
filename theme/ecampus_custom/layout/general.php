@@ -113,6 +113,10 @@ echo $OUTPUT->doctype() ?>
                             get_string('myprofile')).' | ';
                             echo html_writer::link(new moodle_url('/login/logout.php', array('sesskey'=>sesskey())),
                             get_string('logout'));
+                            if(is_siteadmin()) {
+                            echo html_writer::link(new moodle_url('/admin/')), 
+                            get_string('adminsection');
+                                }
                                 
                             } else { ?>
 
@@ -134,10 +138,7 @@ echo $OUTPUT->doctype() ?>
                     <div class="header-welcome">
                             <p>Welcome to Temple’s Dental eCampus which provides you with access to courses, webinars, certificate, and ePorftolios.<br />For details, select any of the areas shown</p>
 
-                            <?php if(is_admin()) { ?>
-
-                            <p>ADMIN: <a href="/admin">EDIT SITE SETTINGS</a></p>
-                            <?php } ?>
+                          
                     </div>
                     <div class="clear"></div>
                 </div>
