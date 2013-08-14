@@ -31,6 +31,7 @@ if($PAGE->bodyid == "page-site-index")
 else
 {
     $hasnavbar = (empty($PAGE->layout_options['nonavbar']) && $PAGE->has_navbar());
+    $ishome = false;
 }
 
 $hasfooter = (empty($PAGE->layout_options['nofooter']));
