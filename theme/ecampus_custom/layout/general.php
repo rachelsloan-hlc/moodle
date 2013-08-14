@@ -17,8 +17,8 @@
 /**
  * General layout for the splash theme
  *
- * @package    theme_splash
- * @copyright  2012 Caroline Kennedy - Synergy Learning
+ * @package    theme_ecampus_custom
+ * @copyright 2013 - Healthcare Learning Company
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -52,7 +52,6 @@ if (empty($PAGE->layout_options['nocourseheaderfooter'])) {
 }
 
 $bodyclasses = array();
-$bodyclasses[] = 'splash-'.splash_get_colour();
 if ($hassidepre && !$hassidepost) {
     $bodyclasses[] = 'side-pre-only';
 } else if ($hassidepost && !$hassidepre) {

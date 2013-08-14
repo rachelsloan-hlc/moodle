@@ -31,8 +31,6 @@ $hassidepost = $PAGE->blocks->region_has_content('side-post', $OUTPUT);
 $custommenu = $OUTPUT->custom_menu();
 $hascustommenu = (empty($PAGE->layout_options['nocustommenu']) && !empty($custommenu));
 
-splash_check_colourswitch();
-splash_initialise_colourswitcher($PAGE);
 
 $courseheader = $coursecontentheader = $coursecontentfooter = $coursefooter = '';
 if (empty($PAGE->layout_options['nocourseheaderfooter'])) {
@@ -45,7 +43,6 @@ if (empty($PAGE->layout_options['nocourseheaderfooter'])) {
 }
 
 $bodyclasses = array();
-$bodyclasses[] = 'splash-'.splash_get_colour();
 if ($hassidepre && !$hassidepost) {
     $bodyclasses[] = 'side-pre-only';
 } else if ($hassidepost && !$hassidepre) {
