@@ -12,3 +12,54 @@
  .course { padding-bottom: 0 !important;}
 
  #coursesearch2 { display: none;}
+
+.block{
+    border:none;
+    margin-bottom:20px;
+    width:210px!important;
+}
+.block hr{
+    display:none;
+}
+
+.block .header .block_action{
+    padding:15px 10px 0 0;
+}
+
+ .block-region .block .header h2{
+    font-size:1.2em;
+    margin:0;
+    padding:15px 0 10px 10px;
+}
+
+h2.main,h3.main,h4.main,h5.main,h6.main{
+    text-align:left;
+}
+#region-main h2.main{
+    font-size:1.6em;
+    font-weight:400;
+    line-height:1.6em;
+    margin:0 0 10px;
+    padding:3px;
+}
+#region-main h2.headingblock{
+    font-size:1.6em;
+    font-weight:400;
+    line-height:1.6em;
+    margin:0 0 10px;
+    padding:3px;
+}
+#region-main .coursebox h3{
+    font-size:1em;
+}
+#region-main p{
+    line-height:1.5em;
+    margin:0;
+    padding:0 0 5px;
+}
+
+#course_search
+{
+	float: right;
+	margin-right: 15px;
+}

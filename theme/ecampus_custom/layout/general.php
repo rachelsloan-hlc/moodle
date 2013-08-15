@@ -89,59 +89,59 @@ echo $OUTPUT->doctype() ?>
 <body id="<?php p($PAGE->bodyid) ?>" class="<?php p($PAGE->bodyclasses.' '.join(' ', $bodyclasses)) ?>">
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
     <div class="wrapper">
-        <!-- end header -->
-        <div class="hidden">
-            <a href="#main" title="skip to main content">Skip to main content</a>
-            <a href="#login" title="skip to login">Skip to login</a>
-        </div>
-        
-        
-        <header>
-            <hgroup class="header-top">
-                <div class="container">
-                    <div class="row">
-                        <div class="span6 header-logo">
-                             <img src="/theme/ecampus_custom/img/layout/header/logo.png" alt="Temple Made: Dental eCampus Logo" title="Temple Made: Dental eCampus Logo" />
-                             <h1 class="hide-text">Temple Made: Dental eCampus</h1>
-                        </div>
-                        <div class="span6 header-login">
-                        <?php
-                            if (isloggedin()) {
+    <!-- end header -->
+    <div class="hidden">
+        <a href="#main" title="skip to main content">Skip to main content</a>
+        <a href="#login" title="skip to login">Skip to login</a>
+    </div>
+    
+    
+    <header>
+        <hgroup class="header-top">
+            <div class="container">
+                <div class="row">
+                    <div class="span6 header-logo">
+                         <img src="/theme/ecampus_custom/img/layout/header/logo.png" alt="Temple Made: Dental eCampus Logo" title="Temple Made: Dental eCampus Logo" />
+                         <h1 class="hide-text">Temple Made: Dental eCampus</h1>
+                    </div>
+                    <div class="span6 header-login">
+                    <?php
+                        if (isloggedin()) {
+                        
+                        echo html_writer::tag('h5', get_string('welcome', 'theme_ecampus_custom', $USER->firstname));
+                        echo html_writer::link(new moodle_url('/user/profile.php', array('id'=>$USER->id)),
+                        get_string('myprofile')).' | ';
+                        echo html_writer::link(new moodle_url('/login/logout.php', array('sesskey'=>sesskey())),
+                        get_string('logout'));
+                        if(is_siteadmin()) {
+                        echo " | <a href='/admin/'>".get_string('adminsection')."</a>";
+                            }
                             
-                            echo html_writer::tag('h5', get_string('welcome', 'theme_ecampus_custom', $USER->firstname));
-                            echo html_writer::link(new moodle_url('/user/profile.php', array('id'=>$USER->id)),
-                            get_string('myprofile')).' | ';
-                            echo html_writer::link(new moodle_url('/login/logout.php', array('sesskey'=>sesskey())),
-                            get_string('logout'));
-                            if(is_siteadmin()) {
-                            echo " | <a href='/admin/'>".get_string('adminsection')."</a>";
-                                }
-                                
-                            } else { ?>
+                        } else { ?>
 
-                            <form action="/login/index.php" method="post" class="form-inline" role="input" title="Login" id="login">
-                              <input type="text" name="username" size="15" class="input-medium" placeholder="Email" />
-                              <input type="password" name="password" size="15" class="input-medium" placeholder="Password" />
-                              <input type="submit" name="Submit" class="btn btn-inverse button-blue" value="Sign in" />
-                            </form>
-                            <?php } ?>      
-                        </div>
+                        <form action="/login/index.php" method="post" class="form-inline" role="input" title="Login" id="login">
+                          <input type="text" name="username" size="15" class="input-medium" placeholder="Email" />
+                          <input type="password" name="password" size="15" class="input-medium" placeholder="Password" />
+                          <input type="submit" name="Submit" class="btn btn-inverse button-blue" value="Sign in" />
+                        </form>
+                        <?php } ?>      
                     </div>
                 </div>
-            </hgroup>
+            </div>
+        </hgroup>
     <?php 
     if ($ishome) { ?>
 
-    <hgroup class="header-banner">
-                <div class="header-banner-image">
-                    <div class="header-welcome">
-                            <p>Welcome to Temple’s Dental eCampus which provides you with access to courses, webinars, certificate, and ePorftolios.<br />For details, select any of the areas shown</p>
+        <hgroup class="header-banner">
+            <div class="header-banner-image">
+                <div class="header-welcome">
+                        <p>Welcome to Temple’s Dental eCampus which provides you with access to courses, webinars, certificate, and ePorftolios.<br />For details, select any of the areas shown</p>
 
-                          
-                    </div>
-                    <div class="clear"></div>
+                      
                 </div>
-            </hgroup>
+                <div class="clear"></div>
+            </div>
+        </hgroup>
     </header>
     
     <?php } else { ?>    
@@ -159,22 +159,19 @@ echo $OUTPUT->doctype() ?>
                     <form id="course_search" action="/course/search.php" method="get" class="form-inline" role="input">
                         <label for="shortsearchbox" class="accesshide">Search courses: </label>
                         <div class="sticky-input sticky-input-medium">
-                            <input type="submit" class="i-search sticky-icon sticky-icon-right "></div>
+                            <input type="submit" class="i-search sticky-icon sticky-icon-right ">
                             <input type="text" id="shortsearchbox" name="search" class="input-medium" placeholder="keyword search">
                         </div>
                     </form>
-            
                 </div>
-            </div>
-
         </div>
     </div>
     </section>
        
         <!-- END OF HEADER -->
-        <article id="main" role="main" >
+    <article id="main" role="main" >
    <?php } if($ishome) { ?>    
-       <div class="container">
+    <div class="container">
      <div class="row">
         <div class="span4">
             <section class="homepage-block sticky">
@@ -212,8 +209,10 @@ echo $OUTPUT->doctype() ?>
                 </div>
             </section>
         </div>
+        <div class="clearfix"></div>
     </div>
-</div>
+  </div>  
+
 <div style="display: none"><?php echo $OUTPUT->main_content() ?></div>
        <?php } else { ?>     
     
@@ -259,7 +258,7 @@ echo $OUTPUT->doctype() ?>
         <?php } ?>
         <div class="clearfix"></div>
     <!-- END OF #Page -->
-    </div>
+    
     <!-- START OF FOOTER -->
     <?php if ($hasfooter) { ?>
     </article>
@@ -286,9 +285,9 @@ echo $OUTPUT->doctype() ?>
                     <div class="span2 footer-section">
                         <h4>Information</h4>
                         <ul>
-                            <li><a href="#">Terms of use</a></li>
-                            <li><a href="#">Contact us</a></li>
-                            <li><a href="#">Privacy policy</a></li>
+                            <li><a href="/site/">Terms of use</a></li>
+                            <li><a href="/site/contact.php">Contact us</a></li>
+                            <li><a href="/site/privacy.php">Privacy policy</a></li>
                         </ul>
                     </div>
                     <div class="span3 footer-section">
@@ -303,16 +302,16 @@ echo $OUTPUT->doctype() ?>
                         <h4>Connect with us</h4>
                         <ul class="list-inline footer-social">
                             <li>
-                                <a href="#" class="i-social i-social-twitter" title="Twitter account">&nbsp;</a><br />
-                                <a href="#" title="Twitter account">Twitter</a>
+                                <a href="https://twitter.com/TempleUniv" class="i-social i-social-twitter" title="Twitter account">&nbsp;</a><br />
+                                <a href="https://twitter.com/TempleUniv" title="Twitter account">Twitter</a>
                             </li>
                             <li>
-                                <a href="#" class="i-social i-social-facebook" title="Facebook account">&nbsp;</a><br />
-                                <a href="#" title="Facebook account">Facebook</a>
+                                <a href="https://www.facebook.com/templeu" class="i-social i-social-facebook" title="Facebook account">&nbsp;</a><br />
+                                <a href="https://www.facebook.com/templeu" title="Facebook account">Facebook</a>
 
                             <li>
-                                <a href="#" class="i-social i-social-youtube" title="Youtube account">&nbsp;</a><br />
-                                <a href="#" title="Youtube account">YouTube</a>
+                                <a href="http://www.youtube.com/user/TempleUniversity" class="i-social i-social-youtube" title="Youtube account">&nbsp;</a><br />
+                                <a href="http://www.youtube.com/user/TempleUniversity" title="Youtube account">YouTube</a>
                             </li>
                         </ul>
                     </div>

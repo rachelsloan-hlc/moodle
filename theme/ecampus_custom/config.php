@@ -30,7 +30,6 @@ $THEME->parents = array(
 );
 
 $THEME->sheets = array(
-    'pagelayout',
     'core',
     'menus',
     'settings',
@@ -47,6 +46,11 @@ $THEME->layouts = array(
         'regions' => array()
     ),
     'standard' => array(
+        'file' => 'general.php',
+        'regions' => array(),
+        'options' => array('langmenu'=>true),
+    ),
+    'custom' => array(
         'file' => 'general.php',
         'regions' => array(),
         'options' => array('langmenu'=>true),
