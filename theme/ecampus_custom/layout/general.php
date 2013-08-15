@@ -285,7 +285,7 @@ echo $OUTPUT->doctype() ?>
                     <div class="span2 footer-section">
                         <h4>Information</h4>
                         <ul>
-                            <li><a href="/site/">Terms of use</a></li>
+                            <li><a href="/site/terms.php">Terms of use</a></li>
                             <li><a href="/site/contact.php">Contact us</a></li>
                             <li><a href="/site/privacy.php">Privacy policy</a></li>
                         </ul>

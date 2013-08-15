@@ -8,7 +8,7 @@ $PAGE->set_context(get_system_context());
 $PAGE->set_pagelayout('custom');
 $PAGE->set_title("Terms of Service");
 $PAGE->set_heading("Terms of Service");
-$PAGE->set_url($CFG->wwwroot.'/site/index.php');
+
 
 
 echo $OUTPUT->header();
