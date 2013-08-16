@@ -285,9 +285,9 @@ echo $OUTPUT->doctype() ?>
                     <div class="span2 footer-section">
                         <h4>Information</h4>
                         <ul>
-                            <li><a href="/site/terms.php">Terms of use</a></li>
-                            <li><a href="/site/contact.php">Contact us</a></li>
-                            <li><a href="/site/privacy.php">Privacy policy</a></li>
+                            <li><a href="/cart/index.php?route=information/information&information_id=5">Terms of use</a></li>
+                            <li><a href="/cart/index.php?route=information/contact">Contact us</a></li>
+                            <li><a href="/cart/index.php?route=information/information&information_id=3">Privacy policy</a></li>
                         </ul>
                     </div>
                     <div class="span3 footer-section">
