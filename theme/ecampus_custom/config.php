@@ -58,19 +58,21 @@ $THEME->layouts = array(
     // Course page
     'course' => array(
         'file' => 'general.php',
-        'regions' => array(),
+        'regions' => array('side-pre'),
+        'defaultregion' => 'side-pre',
         'options' => array('langmenu'=>true),
     ),
     // Course page
     'coursecategory' => array(
         'file' => 'general.php',
-        'regions' => array(),
-        'defaultregion' => '',
+        'regions' => array('side-pre'),
+        'defaultregion' => 'side-pre',
         'options' => array('langmenu'=>true),
     ),
     'incourse' => array(
         'file' => 'general.php',
-        'regions' => array(),
+        'regions' => array('side-pre'),
+        'defaultregion' => 'side-pre',
         'options' => array('langmenu'=>true),
     ),
     'frontpage' => array(
