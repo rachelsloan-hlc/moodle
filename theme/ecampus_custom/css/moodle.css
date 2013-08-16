@@ -32,6 +32,47 @@
     padding:15px 0 10px 10px;
 }
 
+#region-main h1{
+    font-size:1.8em;
+    font-weight:400;
+    line-height:1.8em;
+    padding:10px 0;
+}
+#region-main h2{
+    font-size:1.6em;
+    font-weight:400;
+    line-height:1.6em;
+    margin:0!important;
+    padding:3px;
+    border-bottom:1px solid #d1cece;
+    color:#333;
+}
+#region-main h3{
+    font-size:1.4em;
+    font-weight:400;
+    line-height:1.4em;
+    padding:10px 0;
+}
+#region-main h4{
+    font-size:1.2em;
+    font-weight:700;
+    line-height:1.2em;
+    padding:10px 0;
+}
+#region-main h5{
+    font-size:1.1em;
+    font-weight:700;
+    line-height:1em;
+    padding:10px 0;
+    font-style:italic;
+    color:#333;
+}
+#region-main h6{
+    font-size:1.1em;
+    font-weight:700;
+    line-height:1em;
+    padding:10px 0;
+}
 h2.main,h3.main,h4.main,h5.main,h6.main{
     text-align:left;
 }
