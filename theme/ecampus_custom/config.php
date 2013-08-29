@@ -62,9 +62,15 @@ $THEME->layouts = array(
         'defaultregion' => 'side-pre',
         'options' => array('langmenu'=>true),
     ),
+    'coursemain' => array(
+        'file' => 'general.php',
+        'regions' => array('side-pre'),
+        'defaultregion' => 'side-pre',
+        'options' => array('langmenu'=>true),
+    ),
     // Course page
     'coursecategory' => array(
-        'file' => 'general.php',
+        'file' => 'category.php',
         'regions' => array('side-pre'),
         'defaultregion' => 'side-pre',
         'options' => array('langmenu'=>true),

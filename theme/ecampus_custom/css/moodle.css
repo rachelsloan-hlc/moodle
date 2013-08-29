@@ -104,3 +104,34 @@ h2.main,h3.main,h4.main,h5.main,h6.main{
 	float: right;
 	margin-right: 15px;
 }
+
+.course_category_tree .category.with_children.collapsed>.info .name {
+	background-image: none;
+}
+
+.coursebox > .info > .name a {
+    background: url('../img/theme/icon_record.png') no-repeat 0px 0px;
+    padding-left: 30px;
+    text-decoration: none;
+    color: #fff;
+}
+
+#page-course-index-category .generalbox.info {
+    margin: 20px 0 0 0;
+    border-color: transparent;
+    font-size: .9em;
+    cursor: pointer;
+    color: #fff;
+    height: 40px;
+    line-height: 38px;
+    overflow: hidden;
+    background-color: #333;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    padding: 0;
+    width: auto;
+}
+
+.coursebox {
+    width: auto;
+}

@@ -36,13 +36,15 @@ if ($categoryid) {
     $PAGE->set_pagetype('course-index-category');
     // And the object has been loaded for us no need for another DB call
     $category = $PAGE->category;
+    $PAGE->set_pagelayout('coursecategory');
 } else {
     $categoryid = 0;
     $PAGE->set_url('/course/index.php');
     $PAGE->set_context(context_system::instance());
+    $PAGE->set_pagelayout('coursemain');
 }
 
-$PAGE->set_pagelayout('coursecategory');
+
 $courserenderer = $PAGE->get_renderer('core', 'course');
 
 if ($CFG->forcelogin) {

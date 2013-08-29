@@ -1075,7 +1075,7 @@ class core_course_renderer extends plugin_renderer_base {
             $course = new course_in_list($course);
         }
         $content = '';
-        $classes = trim('coursebox clearfix '. $additionalclasses);
+        $classes = trim('coursebox clearfix rounded-block '. $additionalclasses);
         if ($chelper->get_show_courses() >= self::COURSECAT_SHOW_COURSES_EXPANDED) {
             $nametag = 'h3';
         } else {
@@ -1375,7 +1375,7 @@ class core_course_renderer extends plugin_renderer_base {
      * @param coursecat_helper $chelper various display options
      * @param coursecat $coursecat
      * @param int $depth depth of the category in the current tree
-     * @return string
+     * @return stringFget-
      */
     protected function coursecat_category_content(coursecat_helper $chelper, $coursecat, $depth) {
         $content = '';
@@ -1497,8 +1497,14 @@ class core_course_renderer extends plugin_renderer_base {
         $attributes = $chelper->get_and_erase_attributes('course_category_tree clearfix');
         $content .= html_writer::start_tag('div',
                 array('id' => $id, 'data-showcourses' => $chelper->get_show_courses()) + $attributes);
-        $content .= '<h4>Select a category</h4>';
-        $content .= html_writer::tag('div', $categorycontent, array('class' => 'content'));
+
+        $categoryid = optional_param('categoryid', 0, PARAM_INT);
+        if (!$categoryid)
+        {
+             $content .= '<h4>Select a category</h4>';
+        }    
+       
+        $content .= html_writer::tag('div', $categorycontent, array('class' => 'row content bucket-content in collapse'));
 
 
 
@@ -1551,19 +1557,23 @@ class core_course_renderer extends plugin_renderer_base {
         } else {
             $this->page->set_title("$site->shortname: ". $coursecat->get_formatted_name());
 
-            // Print the category selector
+            /** Print the category selector
             $output .= html_writer::start_tag('div', array('class' => 'categorypicker'));
             $select = new single_select(new moodle_url('/course/index.php'), 'categoryid',
                     coursecat::make_categories_list(), $coursecat->id, null, 'switchcategory');
             $select->set_label(get_string('categories').':');
             $output .= $this->render($select);
             $output .= html_writer::end_tag('div'); // .categorypicker
+            **/
         }
 
         // Print current category description
         $chelper = new coursecat_helper();
-        if ($description = $chelper->get_category_formatted_description($coursecat)) {
-            $output .= $this->box($description, array('class' => 'generalbox info'));
+        //if ($description = $chelper->get_category_formatted_description($coursecat)) {
+          if($catname = $coursecat->get_formatted_name()) {  
+            $output .= $this->box_start('generalbox info bucket-head');
+            $output .= '<span class="i-toggle i-inline i-hollow-minus"></span> <strong class="bucket-head-title ">'.$catname.'</strong>';
+            $output .= $this->box_end();
         }
 
         // Prepare parameters for courses and categories lists in the tree
