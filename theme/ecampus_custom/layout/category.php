@@ -76,7 +76,7 @@ echo $OUTPUT->doctype() ?>
 <?php echo $OUTPUT->standard_head_html() ?>
 
 <link rel="stylesheet" href="/theme/ecampus_custom/libs/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/theme/ecampus_custom/libs/bootstrap/css/bootstrap-responsive.min.css">
+    <link rel="stylesheet" theme="/href/ecampus_custom/libs/bootstrap/css/bootstrap-responsive.min.css">
     <link rel="stylesheet" href="/theme/ecampus_custom/css/style.min.css">
     <link rel="stylesheet" href="/theme/ecampus_custom/css/moodle.css">
 </head>
@@ -123,22 +123,6 @@ echo $OUTPUT->doctype() ?>
                 </div>
             </div>
         </hgroup>
-    <?php 
-    if ($ishome) { ?>
-
-        <hgroup class="header-banner">
-            <div class="header-banner-image">
-                <div class="header-welcome">
-                        <p>Welcome to Temple’s Dental eCampus which provides you with access to courses, webinars, certificate, and ePorftolios.<br />For details, select any of the areas shown</p>
-
-                      
-                </div>
-                <div class="clear"></div>
-            </div>
-        </hgroup>
-    </header>
-    
-    <?php } else { ?>    
     </header>    
     <section id="page-strap">
     <div class="container">
@@ -164,54 +148,28 @@ echo $OUTPUT->doctype() ?>
        
         <!-- END OF HEADER -->
     <article id="main" role="main" >
-   <?php } if($ishome) { ?>    
-    <div class="container">
-     <div class="row">
-        <div class="span4">
-            <section class="homepage-block sticky">
-                <div class="image"><img src="/theme/ecampus_custom/img/module/homepage-block/home-block-1.png" width="351" height="161" alt="Post-doctoral Certificates" /></div>
-                <div class="title"><h3>Continuing Education</h3></div>
-                <div class="text bg-green">
-                    <p>To make learning more accessible, Temple offers a growing list of online certificates supported by online lectures, directed reading, case-presentations, and online assessments.</p>
-                </div>
-                <div class="more-info">
-                    <a href="/course/" class="i-align-left i-arrow-right" title="More information about Post-doctoral Certificates">More info</a>
-                </div>
-            </section>
-        </div>
-        <div class="span4">
-            <section class="homepage-block sticky">
-                <div class="image"><img src="/theme/ecampus_custom/img/module/homepage-block/home-block-2.png" width="351" height="161" alt="Continuing Education" /></div>
-                <div class="title"><h3>Live Webinars</h3></div>
-                <div class="text bg-blue">
-                    <p>Our live webinars give you access to leading speakers from around the world so that you can directly ask them questions about technologies or treatments.  If you miss one, don’t worry, we record them as well so you can watch later as well.  If you would like to speak at one of our webinars, please <a href="mailto:kimberlee@dental.temple.edu">email us</a>.  </p>
-                </div>
-                <div class="more-info">
-                    <a href="/course/category.php?id=999" class="i-align-left i-arrow-right" title="Live Webinars">More info</a>
-                </div>
-            </section>
-        </div>
-        <div class="span4">
-            <section class="homepage-block sticky">
-                <div class="image"><img src="/theme/ecampus_custom/img/module/homepage-block/home-block-3.png" width="351" height="161" alt="ePortfolios" /></div>
-                <div class="title"><h3>ePortfolios</h3></div>
-                <div class="text bg-orange">
-                    <p>To better support dental students and faculty, Temple provides a growing number of eportfolios. These can also be licensed by other schools to improve monitoring of student achievements, guide reflective thinking, and to record assessments.  The Temple Dental eCampus provides other schools with an opportunity to create their own ePortfolios at a relatively low cost.</p>
-                </div>
-                <div class="more-info">
-                    <a href="#" class="i-align-left i-arrow-right" title="ePortfolios">More info</a>
-                </div>
-            </section>
-        </div>
-        <div class="clearfix"></div>
-    </div>
-  </div>  
-
-<div style="display: none"><?php echo $OUTPUT->main_content() ?></div>
-       <?php } else { ?>     
     
+     <?php if(!is_siteadmin()) { ?>
         <!-- START OF CONTENT -->
         <div id="page-content">
+            <div id="region-main-box">
+                <div id="region-post-box">
+                    <div id="region-main-wrap">
+                        <div id="region-main" style='margin-left: 0'>
+                            <div class="region-content">
+                                <?php echo $coursecontentheader; ?>
+                                <?php echo $OUTPUT->main_content() ?>
+                                <?php echo $coursecontentfooter; ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+     <?php } else { ?>
+     
+<div id="page-content">
             <div id="region-main-box">
                 <div id="region-post-box">
                     <div id="region-main-wrap">
@@ -245,7 +203,7 @@ echo $OUTPUT->doctype() ?>
             </div>
         </div>
 
-        <?php } ?>
+     <?php } ?>   
         <!-- END OF CONTENT -->
         <?php if (!empty($coursefooter)) { ?>
         <div id="course-footer"><?php echo $coursefooter; ?></div>

@@ -39,6 +39,7 @@
         -moz-border-radius-bottomleft: 5px;
         border-bottom-right-radius: 5px;
         border-bottom-left-radius: 5px;
+        padding: 10px;
     }
     @media (max-width: 767px) { padding: 0 20px; }
 
@@ -53,16 +54,23 @@
       td {
         border-right: 1px solid #ccc;
         font-size: 0.9em;
+        border-bottom: 1px solid #ccc;
+
+        a {
+          text-decoration: none;
+          color: #333;
+          font-size: 1.2em;
+        }
       }
 
       td:last-child {
         border-right: none;
       }
 
-      .title { width: 40%; font-size: 0.8em; }
+      .title { width: 65%; font-size: 0.8em; }
       .hours, .price { width: 15%; text-align: center; }
       .price { width: 10% }
-      .more-info { width: 35%; padding-left: 10px }
+      .more-info { width: 30%; padding-left: 10px; font-size: .8em }
     }
 
 

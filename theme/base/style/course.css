@@ -119,26 +119,24 @@ li.section.hidden span.commands a.editing_show {cursor:default;}
 .coursebox > .info > .name,
 .coursebox .content .teachers,
 .coursebox .content .courseimage,
-.coursebox .content .coursefile {float:left;width:40%;clear:left;}
+.coursebox .content .coursefile {float:right;width:25%; text-align: right; clear: right; margin: 0;}
 .coursebox .content .teachers li {list-style-type:none;padding:0;margin:0;}
 .coursebox .enrolmenticons {padding:3px 0;float:right;}
 .coursebox .moreinfo {padding:3px 0;float:right;}
 .coursebox .enrolmenticons img,
 .coursebox .moreinfo img {margin:0 .2em;}
-.coursebox .content {clear:both;overflow: hidden;}
+.coursebox .content {clear:both;overflow: hidden;padding: 0px 10px;}
 .coursebox .content .summary,
-.coursebox .content .coursecat {float:right;width: 55%;}
-.coursebox .content .coursecat {text-align:right;clear:right;}
-.coursebox.remotecoursebox .remotecourseinfo {float:left;width: 40%;}
-.coursebox .content .courseimage img {max-width:100px;max-height:100px;}
+.coursebox .content .coursecat {float:left;width: 75%; clear: left;}
+.coursebox .content .coursecat {text-align:right;}
+.coursebox.remotecoursebox .remotecourseinfo {float:left;width: 25%;}
+.coursebox .content .courseimage img {max-width:100px;max-height:100px; margin: 0px 10px;}
 
 .coursebox >.info >.name {margin: 5px;padding:0;}
 .coursebox .content .teachers,
 .coursebox .content .coursecat,
-.coursebox .content .summary,
-.coursebox .content .courseimage,
 .coursebox .content .coursefile,
-.coursebox.remotecoursebox .remotecourseinfo {margin:3px 5px;padding:0;}
+.coursebox.remotecoursebox .remotecourseinfo {margin:0px;padding:0;}
 
 .dir-rtl .coursebox > .info > .name a {padding-left:0;padding-right:21px;background-position: top right;}
 .dir-rtl .coursebox > .info > .name,

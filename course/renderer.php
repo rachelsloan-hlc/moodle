@@ -1084,15 +1084,23 @@ class core_course_renderer extends plugin_renderer_base {
         }
         $content .= html_writer::start_tag('div', array('class' => $classes)); // .coursebox
 
-        $content .= html_writer::start_tag('div', array('class' => 'info'));
+        $content .= '<table border="0" class="details-table"><tbody><tr>';
 
         // course name
         $coursename = $chelper->get_course_formatted_name($course);
         $coursenamelink = html_writer::link(new moodle_url('/course/view.php', array('id' => $course->id)),
                 $coursename, array('class' => $course->visible ? '' : 'dimmed'));
-        $content .= html_writer::tag($nametag, $coursenamelink, array('class' => 'name'));
+        $content .= '<td class="title"><span class="i-record"></span><strong>'.$coursenamelink.'</strong></td>';
+       // $content .= html_writer::tag($nametag, $coursenamelink, array('class' => 'name'));
+
+        $content .= '<td class="more-info" nowrap="nowrap">
+                        <strong><a href="#">Request information</a></strong> <span class="i-inline i-circle-envelope "></span> 
+                        &nbsp;&nbsp;
+                        <strong><a href="#">Purchase</a></strong> <span class="i-inline i-circle-purchase "></span>
+                    </td>';
 
         // If we display course in collapsed form but the course has summary or course contacts, display the link to the info page.
+        /*
         $content .= html_writer::start_tag('div', array('class' => 'moreinfo'));
         if ($chelper->get_show_courses() < self::COURSECAT_SHOW_COURSES_EXPANDED) {
             if ($course->has_summary() || $course->has_course_contacts() || $course->has_course_overviewfiles()) {
@@ -1103,7 +1111,7 @@ class core_course_renderer extends plugin_renderer_base {
             }
         }
         $content .= html_writer::end_tag('div'); // .moreinfo
-
+        */
         // print enrolmenticons
         if ($icons = enrol_get_course_info_icons($course)) {
             $content .= html_writer::start_tag('div', array('class' => 'enrolmenticons'));
@@ -1113,7 +1121,7 @@ class core_course_renderer extends plugin_renderer_base {
             $content .= html_writer::end_tag('div'); // .enrolmenticons
         }
 
-        $content .= html_writer::end_tag('div'); // .info
+        $content .= '</tr></tbody></table>'; // .info
 
         $content .= html_writer::start_tag('div', array('class' => 'content'));
         $content .= $this->coursecat_coursebox_content($chelper, $course);
@@ -1504,7 +1512,7 @@ class core_course_renderer extends plugin_renderer_base {
              $content .= '<h4>Select a category</h4>';
         }    
        
-        $content .= html_writer::tag('div', $categorycontent, array('class' => 'row content bucket-content in collapse'));
+        $content .= html_writer::tag('div', $categorycontent, array('class' => ' content bucket-content in collapse'));
 
 
 
