@@ -1111,7 +1111,7 @@ class core_course_renderer extends plugin_renderer_base {
             }
         }
         $content .= html_writer::end_tag('div'); // .moreinfo
-        */
+        
         // print enrolmenticons
         if ($icons = enrol_get_course_info_icons($course)) {
             $content .= html_writer::start_tag('div', array('class' => 'enrolmenticons'));
@@ -1120,6 +1120,7 @@ class core_course_renderer extends plugin_renderer_base {
             }
             $content .= html_writer::end_tag('div'); // .enrolmenticons
         }
+        */
 
         $content .= '</tr></tbody></table>'; // .info
 
